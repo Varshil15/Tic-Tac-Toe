@@ -126,18 +126,37 @@ function announceWinner() {
     currentPlayerDisplay.textContent = `${playerName} Wins! 🎉`;
 }
 
-// Bot move using Minimax algorithm
+// Bot move with adjustable difficulty (makes mistakes sometimes)
 function botMove() {
     if (!gameActive) return;
 
-    const bestMove = getBestMove();
-    const cell = cells[bestMove];
+    let move;
+    // Bot makes optimal move 60% of the time, random move 40% of the time
+    const playOptimal = Math.random() > 0.4;
     
-    handleCellPlayed(cell, bestMove);
+    if (playOptimal) {
+        move = getBestMove();
+    } else {
+        move = getRandomMove();
+    }
+    
+    const cell = cells[move];
+    handleCellPlayed(cell, move);
     handleResultValidation();
 }
 
-// Minimax algorithm for bot
+// Get random available move
+function getRandomMove() {
+    const availableMoves = [];
+    for (let i = 0; i < board.length; i++) {
+        if (board[i] === '') {
+            availableMoves.push(i);
+        }
+    }
+    return availableMoves[Math.floor(Math.random() * availableMoves.length)];
+}
+
+// Minimax algorithm for bot (optimal play)
 function getBestMove() {
     let bestScore = -Infinity;
     let move = 0;
