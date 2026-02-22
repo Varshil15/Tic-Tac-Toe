@@ -103,6 +103,10 @@ function handleResultValidation() {
             currentPlayerDisplay.textContent = "It's a Draw! 🤝";
             scores.draw++;
             updateScoreDisplay();
+            // Auto-restart after 2 seconds
+            setTimeout(() => {
+                resetGame();
+            }, 2000);
         }, 300);
         return;
     }
