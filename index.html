@@ -9,37 +9,39 @@
 </head>
 <body>
     <div class="container">
-        <h1>🎮 Tic-Tac-Toe 🎮</h1>
-        
-        <div class="mode-selection">
-            <button class="mode-btn active" data-mode="pvp">👥 Player vs Player</button>
-            <button class="mode-btn" data-mode="pvb">🤖 Player vs Bot</button>
-        </div>
+        <div class="left-section">
+            <div class="board" id="board">
+                <button class="cell" data-index="0"></button>
+                <button class="cell" data-index="1"></button>
+                <button class="cell" data-index="2"></button>
+                <button class="cell" data-index="3"></button>
+                <button class="cell" data-index="4"></button>
+                <button class="cell" data-index="5"></button>
+                <button class="cell" data-index="6"></button>
+                <button class="cell" data-index="7"></button>
+                <button class="cell" data-index="8"></button>
+            </div>
 
-        <div class="game-info">
-            <div class="current-player">Current Player: <span id="current">X</span></div>
-            <div class="score-board">
-                <div class="score">Player X: <span id="scoreX">0</span></div>
-                <div class="score">Draws: <span id="scoreDraw">0</span></div>
-                <div class="score">Player O: <span id="scoreO">0</span></div>
+            <div class="controls">
+                <button class="btn reset-btn" id="resetBtn">🔄 New Game</button>
+                <button class="btn reset-score-btn" id="resetScoreBtn">📊 Reset Score</button>
             </div>
         </div>
 
-        <div class="board" id="board">
-            <button class="cell" data-index="0"></button>
-            <button class="cell" data-index="1"></button>
-            <button class="cell" data-index="2"></button>
-            <button class="cell" data-index="3"></button>
-            <button class="cell" data-index="4"></button>
-            <button class="cell" data-index="5"></button>
-            <button class="cell" data-index="6"></button>
-            <button class="cell" data-index="7"></button>
-            <button class="cell" data-index="8"></button>
-        </div>
+        <div class="right-section">
+            <div class="game-info">
+                <div class="current-player">Current Player: <span id="current">X</span></div>
+                <div class="score-board">
+                    <div class="score">Player X: <span id="scoreX">0</span></div>
+                    <div class="score">Draws: <span id="scoreDraw">0</span></div>
+                    <div class="score">Player O: <span id="scoreO">0</span></div>
+                </div>
+            </div>
 
-        <div class="controls">
-            <button class="btn reset-btn" id="resetBtn">🔄 New Game</button>
-            <button class="btn reset-score-btn" id="resetScoreBtn">📊 Reset Score</button>
+            <div class="mode-selection">
+                <button class="mode-btn active" data-mode="pvp">👥 Player vs Player</button>
+                <button class="mode-btn" data-mode="pvb">🤖 Player vs Bot</button>
+            </div>
         </div>
     </div>
 
